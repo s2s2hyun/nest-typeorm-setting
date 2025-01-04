@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  nest-app:
+    image: nest-app # 이미 로드된 이미지 사용
+    container_name: nest-prod-container
+    ports:
+      - '8000:8000' # 배포 환경 포트 매핑
+    environment:
+      - NODE_ENV=production

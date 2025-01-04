@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  nest-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest-dev-container
+    ports:
+      - '3000:3000' # 개발 모드 포트
+    volumes:
+      - .:/usr/src/app # 로컬 파일을 컨테이너와 동기화
+      - /usr/src/app/node_modules # node_modules는 컨테이너 내부에서 관리
+    environment:
+      - NODE_ENV=development # 개발 환경
+    command: yarn start:dev # 개발 모드 실행
