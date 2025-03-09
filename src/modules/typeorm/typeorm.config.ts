@@ -19,7 +19,7 @@ export const typeOrmConfig = {
     password: configService.get<string>('DATABASE_PASSWORD'),
     database: configService.get<string>('DB_DATABASE'),
     entities: [__dirname + '/../**/*.entity.{js,ts}'],
-    synchronize: false, // 개발 환경에서만 true (운영에서는 false)
+    synchronize: true, // 개발 환경에서만 true (운영에서는 false)
     logging: true, // SQL 로그 확인
   }),
 };

@@ -29,15 +29,12 @@ export class UserEntity {
 
   @CreateDateColumn({
     type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP',
     comment: '멤버 생성 시간',
   })
   member_created_at: Date;
 
   @UpdateDateColumn({
     type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP',
-    onUpdate: 'CURRENT_TIMESTAMP',
     comment: '멤버 수정 시간',
   })
   member_updated_at: Date;
